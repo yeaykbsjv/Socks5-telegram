@@ -7,7 +7,7 @@ fi
 
 echo "Starting SOCKS5 proxy..."
 
-microsocks \
+/microsocks/microsocks \
 -p 1080 \
 -u "$SOCKS_USER" \
 -P "$SOCKS_PASS"
