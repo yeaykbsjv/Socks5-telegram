@@ -10,6 +10,6 @@ COPY start.sh /start.sh
 
 RUN chmod +x /start.sh
 
-EXPOSE 1080
+EXPOSE 443
 
 CMD ["/start.sh"]
