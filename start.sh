@@ -1,6 +1,6 @@
 #!/bin/sh
 
-/microsocks/microsocks \
+/opt/microsocks/microsocks \
 -i 0.0.0.0 \
 -p 1080 \
 -u "$SOCKS_USER" \
