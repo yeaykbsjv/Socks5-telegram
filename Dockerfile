@@ -1,7 +1,15 @@
 FROM alpine:latest
 
-RUN apk add --no-cache dante-server
+RUN apk add --no-cache git make gcc musl-dev
 
-COPY sockd.conf /etc/sockd.conf
+RUN git clone https://github.com/rofl0r/microsocks.git /microsocks && \
+    cd /microsocks && \
+    make
 
-CMD ["sockd", "-f", "/etc/sockd.conf", "-D"]
+COPY start.sh /start.sh
+
+RUN chmod +x /start.sh
+
+EXPOSE 1080
+
+CMD ["/start.sh"]
