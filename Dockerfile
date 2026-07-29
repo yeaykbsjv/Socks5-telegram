@@ -1,4 +1,4 @@
-FROM Alpine:latest
+FROM alpine:latest
 
 RUN apk add --no-cache git make gcc musl-dev
 
