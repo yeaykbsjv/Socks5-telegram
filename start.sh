@@ -1,13 +1,14 @@
 #!/bin/sh
 
 if [ -z "$SOCKS_USER" ] || [ -z "$SOCKS_PASS" ]; then
-  echo "Missing variables"
-  exit 1
+    echo "Missing SOCKS_USER or SOCKS_PASS"
+    exit 1
 fi
 
-echo "Starting SOCKS5 on port 443"
+echo "Starting microsocks..."
 
 /microsocks/microsocks \
--p 443 \
+-i 0.0.0.0 \
+-p 1080 \
 -u "$SOCKS_USER" \
 -P "$SOCKS_PASS"
