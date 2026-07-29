@@ -1,6 +1,10 @@
-FROM alpine:latest
+FROM Alpine:latest
 
-RUN apk add --no-cache microsocks
+RUN apk add --no-cache git make gcc musl-dev
+
+RUN git clone https://github.com/rofl0r/microsocks.git /microsocks \
+    && cd /microsocks \
+    && make
 
 COPY start.sh /start.sh
 
